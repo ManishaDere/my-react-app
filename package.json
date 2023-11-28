@@ -1,0 +1,29 @@
+{
+  "name": "my-react-app",
+  "version": "1.0.0",
+  "description": "This React app with basic start",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManishaDere/my-react-app.git"
+  },
+  "author": "Manisha Dere",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ManishaDere/my-react-app/issues"
+  },
+  "homepage": "https://github.com/ManishaDere/my-react-app#readme",
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browsers-list": [
+    "last 2 versions"
+  ]
+}
