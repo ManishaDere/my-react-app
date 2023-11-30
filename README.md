@@ -20,3 +20,8 @@
 - Parcel gives support to test in https environment
 - Parcel will remove extra unused code while minification
 - DIfferent dev and production bundles
+
+# 2 types for exports
+
+- Default export
+- Named export
