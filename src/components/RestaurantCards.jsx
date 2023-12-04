@@ -1,5 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer";
 
 const RestaurantCards = () => {
@@ -10,15 +11,13 @@ const RestaurantCards = () => {
   const [searchText, setSearchText] = useState("");
 
   // Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
-  console.log("Body Rendered");
-
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.513463&lng=73.76985789999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
 
@@ -52,8 +51,8 @@ const RestaurantCards = () => {
     postData(
       "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/update",
       {
-        lat: 18.513463,
-        lng: 73.76985789999999,
+        lat: 12.9351929,
+        lng: 77.62448069999999,
         nextOffset: "COVCELQ4KICIxemZ776bTDCnEzgD",
         widgetOffset: {
           NewListingView_Topical_Fullbleed: "",
@@ -76,11 +75,6 @@ const RestaurantCards = () => {
       }
     ).then((data) => {
       // console.log(data); // JSON data parsed by `data.json()` call
-      console.log(
-        "data=>",
-        data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
-      ); // JSON data parsed by `data.json()` call
       setFilteredRestaurant(
         listOfRestaurants.concat(
           data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle
@@ -138,7 +132,12 @@ const RestaurantCards = () => {
       </div>
       <div className="restaurant-cards">
         {filteredRestaurant.map((restaurant) => (
-          <RestaurantCard resData={restaurant?.info} />
+          <Link
+            to={"/restaurants/" + restaurant.info.id}
+            key={restaurant?.info?.id}
+          >
+            <RestaurantCard resData={restaurant?.info} />
+          </Link>
         ))}
       </div>
     </div>

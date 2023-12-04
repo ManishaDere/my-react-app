@@ -75,3 +75,21 @@ header {
 .search-btn {
   padding: 5px;
 }
+.login-btn {
+  padding: 5px;
+  cursor: pointer;
+}
+.error-page {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.error-data {
+  color: red;
+  font-size: 20px;
+}
+.menu-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
