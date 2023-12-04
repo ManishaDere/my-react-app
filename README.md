@@ -25,3 +25,14 @@
 
 - Default export
 - Named export
+
+# useEffect and in class components use of lifecycle methods
+
+- useEffect is similar to componnetDidMount, componnetWillUnMount and componnetDidUpdate. In this
+  useEffect(() => {}, []) ==============> componnetDidMount - after componnet gets render its called
+  componnetDidUpdate ==> when state update with any API call or any state updation then this is called
+  componentWIllUnMount ==> If we want to cleanup our timers and any allocation of memory then we can use cleanup function in useEffect or componnetWillUnMount function. both does same
+
+in constructor we use super(props) to use/access Parent components variables
+
+useEffect should not have async callback function because async function returns Promise but our callback should not return Promise. It only returns cleanup function.
