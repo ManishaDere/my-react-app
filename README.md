@@ -36,3 +36,8 @@
 in constructor we use super(props) to use/access Parent components variables
 
 useEffect should not have async callback function because async function returns Promise but our callback should not return Promise. It only returns cleanup function.
+
+# Lazy loading, custom hooks, Dynamic loading, code splitting, chunks, on demand loading
+
+- create custom hooks which code we want to reuse and also if we create smaller smaller components then its reusable, maintainable, modular, more testable
+- In large scale applications when bundle.js file gets increasing at that time which part of application we wants to some time after then we can load that componnet/ feature lazy by using lazy ans Suspense
