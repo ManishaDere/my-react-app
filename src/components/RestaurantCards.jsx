@@ -1,7 +1,8 @@
 import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer";
+import UserContext from "../utils/UserContext";
 
 const RestaurantCards = () => {
   // Local State Variable - Super powerful variable
@@ -11,6 +12,7 @@ const RestaurantCards = () => {
   console.log("listOfRestaurants ==>", listOfRestaurants);
   const [searchText, setSearchText] = useState("");
   const PromotedRestaurantCard = withPromotedLabel(RestaurantCard);
+  const { loggedInUser, setUserInfo } = useContext(UserContext);
 
   // Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
   useEffect(() => {
@@ -118,6 +120,14 @@ const RestaurantCards = () => {
           >
             Search
           </button>
+        </div>
+        <div className="search m-4 p-4 flex items-center">
+          <label>UserName : </label>
+          <input
+            className="border border-black p-2"
+            value={loggedInUser}
+            onChange={(e) => setUserInfo(e.target.value)}
+          />
         </div>
         <div className="flex items-center justify-between">
           <button
