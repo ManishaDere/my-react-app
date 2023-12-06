@@ -6,7 +6,7 @@ const RestaurantCard = (props) => {
     resData;
 
   return (
-    <div className="m-4 p-4 w-[250px] bg-gray-50 rounded-lg hover:bg-gray-300">
+    <div className="m-4 p-4 w-[250px] bg-gray-100 rounded-lg hover:bg-gray-300">
       <img
         className="rounded-lg"
         alt="restaurant-logo"
@@ -19,6 +19,19 @@ const RestaurantCard = (props) => {
       <p>Will deliver in {sla.deliveryTime}</p>
     </div>
   );
+};
+
+export const withPromotedLabel = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute ml-4 p-2 bg-black text-white rounded-lg">
+          Promoted
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default RestaurantCard;
