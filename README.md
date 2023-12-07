@@ -45,3 +45,19 @@ useEffect should not have async callback function because async function returns
 # HOC Higher order components
 
 - input Component ===> trnsforms ===> new component (with some enhancement)
+
+# redux
+
+- install redux-toolkit, react-redux install this 2 librraies
+- build a store
+- connect our storeto our app
+- slice
+  -In older versiongs of redux (vanilla) we were unable to mutate state directly. also we have to return state
+  for ex. const newSatte = [...state]
+  newState.push(items)
+  return newState
+
+but in redux-toolkit we can modify state and no need to return anything from it
+here we can directly update state and no need to return it
+
+for this mutation redux-toolkit uses immer.js

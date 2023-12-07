@@ -1,6 +1,7 @@
 import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Shimmer from "./Shimmer";
 import UserContext from "../utils/UserContext";
 
@@ -13,6 +14,9 @@ const RestaurantCards = () => {
   const [searchText, setSearchText] = useState("");
   const PromotedRestaurantCard = withPromotedLabel(RestaurantCard);
   const { loggedInUser, setUserInfo } = useContext(UserContext);
+
+  const theme = useSelector((state) => state.theme);
+  console.log("theme ==>", theme);
 
   // Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
   useEffect(() => {
@@ -93,7 +97,11 @@ const RestaurantCards = () => {
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="restaurant-card-block">
+    <div
+      className={
+        !theme.lightTheme ? "bg-black text-white" : "bg-white text-black"
+      }
+    >
       <div className="flex">
         <div className="m-4 p-4">
           <input
