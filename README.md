@@ -61,3 +61,46 @@ but in redux-toolkit we can modify state and no need to return anything from it
 here we can directly update state and no need to return it
 
 for this mutation redux-toolkit uses immer.js
+
+# testing
+
+- React developer can do -
+
+# Unit testing - test 1 component at a time, for ex. header component is rendering or not. we can test it in isolation
+
+# integration testing - if we test search functionality it will filter all items and shows filetered items only. so many components calls and got change. that means integration testing
+
+# end to end testing - how user will flow across the application,
+
+for ex. user clicks on login then goes to landing page
+tools - cypress
+
+# Setting up testing in react app
+
+- react-testing-librray - npm i @testing-librray/react
+- jest - npm install -D jest
+- installed babel dependencies - npm install --save-dev babel-jest @babel/core @babel/preset-env
+- configure babel babel.config.js - add it from doc
+- npx jest --init
+
+if our jest verison > 29 then install go to set-up/jest-28
+npm i -D jest-environment-jsdom
+
+# Types of testing (devloper)
+
+- Unit Testing
+- Integration Testing
+- End to End Testing - e2e testing
+
+# Setting up Testing in our app
+
+- Install React Testing Library
+- Installed jest
+- Installed Babel dependencies
+- Configure Babel
+- Configure Parcel Config file to disable default babel transpilation
+- Jest - npx jest --init
+- Install jsdom library
+- Install @babel/preset-react - to make JSX work in test cases
+- Include @babel/preset-react inside my babel config
+- npm i -D @testing-library/jest-dom
