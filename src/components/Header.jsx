@@ -75,8 +75,8 @@ const Header = () => {
             </button>
           </li>
           <li className="font-bold">{loggedInUser}</li>
-          <li>
-            <></>
+          <li className="px-4">
+            <Link to="/demo">Demo</Link>
           </li>
         </ul>
       </div>
