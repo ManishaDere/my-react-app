@@ -10,13 +10,11 @@ const RestaurantCards = () => {
   const [listOfRestaurants, setListOfRestraunt] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
-  console.log("listOfRestaurants ==>", listOfRestaurants);
   const [searchText, setSearchText] = useState("");
   const PromotedRestaurantCard = withPromotedLabel(RestaurantCard);
   const { loggedInUser, setUserInfo } = useContext(UserContext);
 
   const theme = useSelector((state) => state.theme);
-  console.log("theme ==>", theme);
 
   // Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
   useEffect(() => {
@@ -92,8 +90,6 @@ const RestaurantCards = () => {
     });
   };
 
-  console.log("filteredRestaurant ===>", filteredRestaurant);
-
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
@@ -108,6 +104,7 @@ const RestaurantCards = () => {
             type="text"
             className="border border-solid border-black"
             value={searchText}
+            data-testid="search-input"
             onChange={(e) => {
               setSearchText(e.target.value);
             }}

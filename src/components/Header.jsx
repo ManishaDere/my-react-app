@@ -24,6 +24,7 @@ const Header = () => {
   const onThemeChange = () => {
     dispatch(toggleTheme());
   };
+
   return (
     <header className="flex justify-between bg-pink-100 shadow-lg">
       <div className="w-24">
@@ -32,7 +33,7 @@ const Header = () => {
       <div className="flex items-center">
         <ul className="flex items-center">
           <li className="px-4">
-            <label labelFor="theme" className="pr-2">
+            <label htmlFor="theme" className="pr-2">
               Use Dark Theme
             </label>
             <input

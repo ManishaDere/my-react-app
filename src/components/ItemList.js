@@ -14,7 +14,10 @@ const ItemList = ({ items }) => {
     <div>
       {items.map((item) => (
         <div key={item?.card?.info?.id} className="flex">
-          <div className="w-9/12 p-2 m-2 border-gray-200 border-b-2 text-left">
+          <div
+            className="w-9/12 p-2 m-2 border-gray-200 border-b-2 text-left"
+            data-testId="foodItems"
+          >
             <span className="font-bold">{item?.card?.info?.name}</span>
             <span className="text-sm">
               --Rs.

@@ -29,7 +29,7 @@ const RestaurantMenu = () => {
   console.log("categories ===>", categories);
 
   return (
-    <div className="text-center">
+    <div className="text-center" data-testId="foodItems">
       <h1 className="font-bold text-2xl m-2">{name}</h1>
       <p className="font-bold text-lg">
         {cuisines.join(", ")} - {costForTwoMessage}
